@@ -16,7 +16,7 @@ int main()
     printf("DISCIPLINA ESTRUTURAS DE DADOS\n");
     for(i = 0; i < 35; i++){
         printf("Nome do Estudante: ");
-        scanf("%s", &al[i].nome);
+        fgets(al[i].nome, al[i].nome, stdin);
         fflush(stdin);
         printf("Primeira Nota: ");
         scanf("%f", &al[i].nota[0]);
@@ -28,19 +28,20 @@ int main()
         al[i].media = (al[i].nota[0] + al[i].nota[1]) / 2;
 
     if(al[i].media >= 7){
-        printf("ALUNO %s APROVADO COM A MÉDIA %.2f!\n", al[i].nome, al[i].media);
+        printf("APROVADO COM A MÉDIA %.2f!\n", al[i].media);
         printf("Situação: ");
         scanf("%s", al[i].status);
+        fflush(stdin);
         printf("\n");
     }
 
     if(al[i].media <= 2.99){
-        printf("ALUNO %s REPROVADO COM A MÉDIA %.2f!\n", al[i].nome, al[i].media);
+        printf("REPROVADO COM A MÉDIA %.2f!\n", al[i].media);
         printf("Situação: ");
         scanf("%s", al[i].status);
+        fflush(stdin);
         printf("\n");
     }
-
 
     if(al[i].media < 7) {
         printf("Nota da Final: ");
@@ -48,28 +49,26 @@ int main()
         fflush(stdin);
         al[i].mediafinal = (al[i].notafinal + al[i].media) / 2;
         if(al[i].mediafinal >= 5){
-            printf("ALUNO %s APROVADO COM A MÉDIA %2.f!\n", al[i].nome, al[i].mediafinal);
+            printf("APROVADO COM A MÉDIA %2.f!\n", al[i].mediafinal);
             printf("Situação: ");
-            scanf("%s", al[i].status);
+            fgets(al[i].status, al[i].status, stdin);
             fflush(stdin);
             printf("\n");
         }
         if(al[i].mediafinal < 5){
-            printf("ALUNO %s REPROVADO COM A MÉDIA %.2f!\n", al[i].nome, al[i].media);
+            printf("REPROVADO COM A MÉDIA %.2f!\n", al[i].media);
             printf("Situação: ");
-            scanf("%s", al[i].status);
+            fgets(al[i].status, al[i].status, stdin);
+            fflush(stdin);
             printf("\n");
         }
-
-
     }
-
 
     }
 
     printf("\n########## Resultado Final!! ############\n\n");
     for(i=0; i < 35; i++){
-        printf("ALUNO %d: %s\n",i+1, al[i].nome);
+        printf("ALUNO %d: %s",i+1, al[i].nome);
         printf("Média: %.2f\n", al[i].media);
         printf("Situação: %s\n",al[i].status);
         printf("------------------\n");
