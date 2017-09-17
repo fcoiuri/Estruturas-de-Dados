@@ -28,15 +28,15 @@ int main()
         al[i].media = (al[i].nota[0] + al[i].nota[1]) / 2;
 
     if(al[i].media >= 7){
-        printf("ALUNO %s APROVADO COM A MÉDIA %.2f!\n", al[i].nome, al[i].media);
-        printf("Situação: ");
+        printf("ALUNO %s APROVADO COM A MÃ‰DIA %.2f!\n", al[i].nome, al[i].media);
+        printf("SituaÃ§Ã£o: ");
         scanf("%s", al[i].status);
         printf("\n");
     }
 
     if(al[i].media <= 2.99){
-        printf("ALUNO %s REPROVADO COM A MÉDIA %.2f!\n", al[i].nome, al[i].media);
-        printf("Situação: ");
+        printf("ALUNO %s REPROVADO COM A MÃ‰DIA %.2f!\n", al[i].nome, al[i].media);
+        printf("SituaÃ§Ã£o: ");
         scanf("%s", al[i].status);
         printf("\n");
     }
@@ -48,15 +48,15 @@ int main()
         fflush(stdin);
         al[i].mediafinal = (al[i].notafinal + al[i].media) / 2;
         if(al[i].mediafinal >= 5){
-            printf("ALUNO %s APROVADO COM A MÉDIA %2.f!\n", al[i].nome, al[i].mediafinal);
-            printf("Situação: ");
+            printf("ALUNO %s APROVADO COM A MÃ‰DIA %2.f!\n", al[i].nome, al[i].mediafinal);
+            printf("SituaÃ§Ã£o: ");
             scanf("%s", al[i].status);
             fflush(stdin);
             printf("\n");
         }
         if(al[i].mediafinal < 5){
-            printf("ALUNO %s REPROVADO COM A MÉDIA %.2f!\n", al[i].nome, al[i].media);
-            printf("Situação: ");
+            printf("ALUNO %s REPROVADO COM A MÃ‰DIA %.2f!\n", al[i].nome, al[i].media);
+            printf("SituaÃ§Ã£o: ");
             scanf("%s", al[i].status);
             printf("\n");
         }
@@ -70,8 +70,8 @@ int main()
     printf("\n########## Resultado Final!! ############\n\n");
     for(i=0; i < 35; i++){
         printf("ALUNO %d: %s\n",i+1, al[i].nome);
-        printf("Média: %.2f\n", al[i].media);
-        printf("Situação: %s\n",al[i].status);
+        printf("MÃ©dia: %.2f\n", al[i].media);
+        printf("SituaÃ§Ã£o: %s\n",al[i].status);
         printf("------------------\n");
   }
 
