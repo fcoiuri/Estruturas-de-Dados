@@ -13,15 +13,15 @@ int main()
     int i=0, j=0, pecasm=0, pecasf=0, maior=0, vendedormaior;
     Empresa e[5];
     setlocale(LC_ALL, "Portuguese");
-    printf("######### Registro de Funcion·rios! #########\n");
+    printf("######### Registro de Funcion√°rios! #########\n");
     while(i<5){
-        printf("Nome do Funcion·rio: ");
+        printf("Nome do Funcion√°rio: ");
         fgets(e[i].nome, e[i].nome, stdin);
         fflush(stdin);
-        printf("Sexo do Funcion·rio(M/F): ");
+        printf("Sexo do Funcion√°rio(M/F): ");
         scanf("%c", &e[i].sexo);
         fflush(stdin);
-        printf("Quantidade de PeÁas Produzidas: ");
+        printf("Quantidade de Pe√ßas Produzidas: ");
         scanf("%i", &e[i].pecas);
         fflush(stdin);
         printf("\n");
@@ -43,8 +43,8 @@ int main()
     }
 
     printf("\n######## RESULTADO GERAL!! ########\n");
-    printf("Quantidade de PeÁas produzidas pelo Sexo Masculino: %d\n", pecasm);
-    printf("Quantidade de PeÁas produzidas pelo Sexo Femininoiiiiiiiiiiiiiiisaasmaska: %d\n", pecasf);
+    printf("Quantidade de Pe√ßas produzidas pelo Sexo Masculino: %d\n", pecasm);
+    printf("Quantidade de Pe√ßas produzidas pelo Sexo Feminino: %d\n", pecasf);
     printf("Maior produtor: %s \n", vendedormaior);
 
     return 0;
