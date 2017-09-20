@@ -16,7 +16,7 @@ int main()
     printf("DISCIPLINA ESTRUTURAS DE DADOS\n");
     for(i = 0; i < 35; i++){
         printf("Nome do Estudante: ");
-        fgets(al[i].nome, al[i].nome, stdin);
+        scanf("%s", al[i].nome);
         fflush(stdin);
         printf("Primeira Nota: ");
         scanf("%f", &al[i].nota[0]);
@@ -32,6 +32,7 @@ int main()
         printf("Situação: ");
         scanf("%s", al[i].status);
         fflush(stdin);
+        printf("\n######################\n");
         printf("\n");
     }
 
@@ -40,8 +41,8 @@ int main()
         printf("Situação: ");
         scanf("%s", al[i].status);
         fflush(stdin);
-        printf("\n");
     }
+
 
     if(al[i].media < 7) {
         printf("Nota da Final: ");
@@ -49,26 +50,32 @@ int main()
         fflush(stdin);
         al[i].mediafinal = (al[i].notafinal + al[i].media) / 2;
         if(al[i].mediafinal >= 5){
-            printf("APROVADO COM A MÉDIA %2.f!\n", al[i].mediafinal);
+            al[i].media = al[i].mediafinal;
+            printf("APROVADO COM A MÉDIA %2.f!\n", al[i].media);
             printf("Situação: ");
-            fgets(al[i].status, al[i].status, stdin);
+            scanf("%s", al[i].status);
             fflush(stdin);
+            printf("\n######################\n");
             printf("\n");
         }
         if(al[i].mediafinal < 5){
-            printf("REPROVADO COM A MÉDIA %.2f!\n", al[i].media);
+            printf("REPROVADO COM A MÉDIA %.2f!\n", al[i].mediafinal);
             printf("Situação: ");
-            fgets(al[i].status, al[i].status, stdin);
+            scanf("%s", al[i].status);
             fflush(stdin);
+            printf("\n######################\n");
             printf("\n");
         }
+
+
     }
+
 
     }
 
     printf("\n########## Resultado Final!! ############\n\n");
     for(i=0; i < 35; i++){
-        printf("ALUNO %d: %s",i+1, al[i].nome);
+        printf("ALUNO %d: %s\n",i+1, al[i].nome);
         printf("Média: %.2f\n", al[i].media);
         printf("Situação: %s\n",al[i].status);
         printf("------------------\n");
