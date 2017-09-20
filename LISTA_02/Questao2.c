@@ -16,7 +16,7 @@ int main()
     printf("######### Registro de Funcionários! #########\n");
     while(i<5){
         printf("Nome do Funcionário: ");
-        fgets(e[i].nome, e[i].nome, stdin);
+        scanf("%s", e[i].nome);
         fflush(stdin);
         printf("Sexo do Funcionário(M/F): ");
         scanf("%c", &e[i].sexo);
