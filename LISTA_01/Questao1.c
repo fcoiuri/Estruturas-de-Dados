@@ -45,9 +45,9 @@ int main(){
 	media = 0;
   
 	for(i = 0; i < tamanho; i++){
-		if(lista[i]%2){
+		if(lista[i]%2){//impares
 			impar++;
-			if(lista[i] > 50)
+			if(lista[i] > 50)//fazendo a media
 			{
 				media += lista[i];
 				aux++;
