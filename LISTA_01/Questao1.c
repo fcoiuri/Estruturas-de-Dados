@@ -1,4 +1,6 @@
-//Leia  uma  lista  de  no  máximo  100  números  inteiros,  carregando os  em  um  vetor.  Os números lidos maiores ou iguais que 256 deverão ser ignorados. Ordene os números lidos em ordem decrescente. Informar quantos são ímpares e quantos são pares. Apresente a média dos números ímpares maiores que 50.
+//Leia  uma  lista  de  no  máximo  100  números  inteiros,  carregando os  em  um  vetor. 
+//Os números lidos maiores ou iguais que 256 deverão ser ignorados. Ordene os números lidos em ordem decrescente 
+//Informar quantos são ímpares e quantos são pares. Apresente a média dos números ímpares maiores que 50.
 
 
 #include <stdio.h>
