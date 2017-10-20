@@ -14,7 +14,7 @@
 
 int main()
 {
-  setlocale(LC_ALL, "Portuguese");
+  	setlocale(LC_ALL, "Portuguese");
 	int tamanhox, tamanhoy, tamanhow, i, menorX, maiorX, elementoz, achou;
 	int vetorX[N], vetorY[N], vetorW[N];
 	printf("Digite o tamanho do vetor X (máximo %d):", N);
@@ -45,7 +45,7 @@ int main()
 		}
 	}
   
-  printf("\n###################\n");
+ 	printf("\n###################\n");
 	printf("Vetor X:\n");
 	mostraVetor(vetorX, tamanhox);
 	printf("###################\n");
