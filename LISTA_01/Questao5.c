@@ -95,11 +95,11 @@ int main()
     scanf("%d", &pesquisado);
     Bolha(lista, tamanho);
     printf("######################\n");
-    printf("Lista ordenada:\n");
+    printf("VETOR N:\n");
     Mostrar(lista, tamanho);
     i = Pesquisa(lista, tamanho, pesquisado);
     if(i != -1)
-        printf("Encontrado na posicao [%d]\n", i);
+        printf("Encontrado na posição [%d]\n", i);
     else
         printf("ELEMENTO NÃO ENCONTRADO\n");
 
