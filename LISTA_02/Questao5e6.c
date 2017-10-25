@@ -3,14 +3,14 @@
 #include <locale.h>
 #include<string.h>
 
-typedef struct {
+typedef struct { //criando registro
     char Nome[30];
     char Endereco[100];
     int Fone;
     char Situacao;
 }Agenda;
 
-void AddPessoas(Agenda *a, char *nome, char *endereco, int fone, int *contatos)
+void AddPessoas(Agenda *a, char *nome, char *endereco, int fone, int *contatos)//add contatos
 {
     strcpy(a[*contatos].Nome, nome);
     strcpy(a[*contatos].Endereco, endereco);
@@ -25,16 +25,16 @@ int PesquisaPessoas(Agenda *a, char *nome, int *contatos)
     int i = 0;
     for(i = 0; i < *contatos; i++)
     {
-        if(!strcmp(a[i].Nome, nome))
+        if(!strcmp(a[i].Nome, nome))//verificando se nome lido estÃ¡ no vetor
             return i;
     }
 
-    return -1;
+    return -1;//quando n encontra retorna valor negativo
 }
 
 void TrocarNome(Agenda *a, char *nome, int menu)
 {
-    strcpy(a[menu].Nome, nome);
+    strcpy(a[menu].Nome, nome); //substituindo valor
 }
 
 void TrocarEndereco(Agenda *a, char *endereco, int menu)
@@ -66,19 +66,19 @@ int main()
         printf("2- Pesquisar Registro pelo NOME.\n");
         printf("3- Alterar Registro.\n");
         printf("#Qualquer tecla para Sair do Programa.\n");
-        printf("-> Digite qual opção deseja realizar: ");
+        printf("-> Digite qual opÃ§Ã£o deseja realizar: ");
         scanf("%c", &leitura);
 
         if(leitura == '1')
         {
-            if(contatos >= 5)
+            if(contatos >= 5) //maximo de contatos
                 printf("#### AGENDA LOTADA!! ####\n");
-            else
+            else //lendo informacoes
             {
                 printf("Nome: ");
                 scanf("%s", nome);
                 fflush(stdin);
-                printf("Endereço: ");
+                printf("EndereÃ§o: ");
                 fflush(stdin);
                 scanf("%s", endereco);
                 printf("Telefone: ");
@@ -90,40 +90,40 @@ int main()
                 AddPessoas(a, nome, endereco, fone, &contatos);
             }
         }
-        else if(leitura == '2')
+        else if(leitura == '2') //pesquisandocontatos
         {
             printf("Nome: ");
             scanf("%s", nome);
             getchar();
             encontrou = PesquisaPessoas(a, nome, &contatos);
 
-            if(encontrou == -1)
-                printf("NOME NÃO ENCONTRADO!! \n");
-            else
+            if(encontrou == -1) //n econtrado
+                printf("NOME NÃƒO ENCONTRADO!! \n");
+            else //mostrando informacoes
             {
                 printf("\nNome: %s\n", a[encontrou].Nome);
-                printf("Endereço: %s\n", a[encontrou].Endereco);
+                printf("EndereÃ§o: %s\n", a[encontrou].Endereco);
                 printf("Telefone: %d\n", a[encontrou].Fone);
-                printf("Situação: %c\n", a[encontrou].Situacao);
+                printf("SituaÃ§Ã£o: %c\n", a[encontrou].Situacao);
             }
         }
-        else if(leitura == '3')
+        else if(leitura == '3') //alterar registro
         {
             printf("Nome: ");
             scanf("%s", nome);
             getchar();
-            encontrou = PesquisaPessoas(a, nome, &contatos);
+            encontrou = PesquisaPessoas(a, nome, &contatos); //pesquisa novamente
 
             if(encontrou == -1)
-                printf("#### NOME NÃO ENCONTRADO!! ####\n");
+                printf("#### NOME NÃƒO ENCONTRADO!! ####\n");
             else
             {
                 printf("\nNome: %s\n", a[encontrou].Nome);
-                printf("Endereço: %s\n", a[encontrou].Endereco);
+                printf("EndereÃ§o: %s\n", a[encontrou].Endereco);
                 printf("Telefone: %d\n", a[encontrou].Fone);
-                printf("Situação: %c\n", a[encontrou].Situacao);
+                printf("SituaÃ§Ã£o: %c\n", a[encontrou].Situacao);
 
-                printf("Deseja Alterar o NOME? S: Sim N: Não ");
+                printf("Deseja Alterar o NOME? S: Sim N: NÃ£o ");
                 scanf("%c", &leitura);
                 getchar();
                 if(leitura == 'S')
@@ -134,18 +134,18 @@ int main()
                     TrocarNome(a, nome, encontrou);
                 }
 
-                printf("Deseja Alterar o ENDEREÇO? S: Sim N: Não ");
+                printf("Deseja Alterar o ENDEREÃ‡O? S: Sim N: NÃ£o ");
                 scanf("%c", &leitura);
                 getchar();
                 if(leitura == 'S')
                 {
-                    printf("Endereço: ");
+                    printf("EndereÃ§o: ");
                     scanf("%s", endereco);
                     getchar();
                     TrocarEndereco(a, endereco, encontrou);
                 }
 
-                printf("Deseja Alterar o TELEFONE? S: Sim N: Não ");
+                printf("Deseja Alterar o TELEFONE? S: Sim N: NÃ£o ");
                 scanf("%c", &leitura);
                 getchar();
                 if(leitura == 'S')
@@ -156,12 +156,12 @@ int main()
                     TrocarFone(a, fone, encontrou);
                 }
 
-                printf("Deseja Alterar a SITUAÇÃO? S: Sim N: Não ");
+                printf("Deseja Alterar a SITUAÃ‡ÃƒO? S: Sim N: NÃ£o ");
                 scanf("%c", &leitura);
                 getchar();
                 if(leitura == 'S')
                 {
-                    printf("Situação(L – Livre; X – Ocupado e * - Apagado): ");
+                    printf("SituaÃ§Ã£o(L â€“ Livre; X â€“ Ocupado e * - Apagado): ");
                     scanf("%c", &situacao);
                     getchar();
                     TrocarSituacao(a, situacao, encontrou);
