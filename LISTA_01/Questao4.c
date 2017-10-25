@@ -2,15 +2,14 @@
 #include <stdlib.h>
 #include <locale.h>
 
-
-
 int primo(int num){
 
-    if(num==1){//1 n„o È primo
+    if(num==1){//1 n√£o √© primo
       return 0;
     }
+    
     int i;
-    for(i=2; i<num; i++){//para numeros maiores que 2 verifica se È par
+    for(i=2; i<num; i++){//para numeros maiores que 2 verifica se √© par e fim da funcao
         if(num%i==0){
           return 0;
         }
@@ -20,18 +19,20 @@ int primo(int num){
 int main(){
     setlocale(LC_ALL, "Portuguese");
     int num, i, total=0;
-    printf("N⁄MEROS PRIMOS!!\n");
+    printf("N√öMEROS PRIMOS!!\n");
     do{
-        printf("Digite um n˙mero: ");
+        printf("Digite um n√∫mero: ");
         scanf("%d", &num);
 
-        if(!primo(num)){ // !operador lÛgico para negaÁ„o
-            printf("O n˙mero %d N√O È primo\n", num);
+        if(!primo(num)){ // !operador l√≥gico para nega√ß√£o
+            printf("O n√∫mero %d N√ÉO √© primo\n", num);
         }
-        else{
-            printf("O n˙mero %d … primo\n", num);
+        
+       
+        if(primo(num)){
+            printf("O n√∫mero %d √â primo\n", num);
             printf("Primos sucessores de %d: ", num);
-            for(i=num+1; total<2; i++){
+            for(i=num+1; total<2; i++){ //mostrando os dois proximos primos
                 if(primo(i)){
                     total++;
                     printf("%d, ", i);
@@ -39,16 +40,20 @@ int main(){
             }
 
             total=0;
-            printf("\nPrimos antecessores de %d: ", num);
-            if(num > 3){
-                for(i=num-1; total<2; i--){
-                    if(primo(i)){
-                        total++;
-                        printf("%d, ", i);
-
+            printf("\nPrimos antecessores de %d: ", num); //mostrando os dois primos anteriores
+            for(i = num-1; i > 0; i--){
+            if(primo(i))
+            {
+                printf("%d\n", i);
+                total++;
             }
-        }
-        }
+            if(total >= 2){ //dois n tem antecessor
+                break;
+            }
+
+  
+            }
+
     };
     }while(num%2 == 0);
     printf("\n");
