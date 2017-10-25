@@ -20,7 +20,7 @@ void mostra_vetor(int *vet, int n){
     }
     printf("]\n");
 }
-
+ 
 void bubbleSort (int *vet, int n){
     int i, j, aux, contador=0;
     for(i=1; i<n; i++){
@@ -33,10 +33,10 @@ void bubbleSort (int *vet, int n){
             }
         }
     }
-    printf("Qnte de trocas: %d \n", contador);
+    printf("Quantidade de trocas: %d \n", contador);
 }
 
-void insertionSort(int *vet, int n){
+void insertionSort(int *vet, int n){ 
     int i, j, aux;
     for(i=1; i<n; i++){
         aux = vet[i];
@@ -63,7 +63,7 @@ void selectionSort(int *vet, int n){
         vet[i] = vet[min];
         vet[min] = aux;
     }
-    printf("Qnte de trocas: %d \n", contador);
+    printf("Quantidade de trocas: %d \n", contador);
 }
 
 void quickSort(int *vet, int inicio, int fim){
@@ -124,36 +124,36 @@ int main()
         case 2: 
             printf("\n ###### INSERTION SORT ######\n");
             cria_vetor(vet, TAMANHO);
-            printf("Vetor original: "); mostra_vetor(vet, TAMANHO);
+            printf("Original: "); mostra_vetor(vet, TAMANHO);
             insertionSort(vet, TAMANHO);
-            printf("Vetor ordenado: "); mostra_vetor(vet, TAMANHO);
+            printf("Ordenado: "); mostra_vetor(vet, TAMANHO);
             printf("\n ");
             break;
         case 3: 
             printf("\n ###### SELECTION SORT ###### \n");
             cria_vetor(vet, TAMANHO);
-            printf("Vetor original: "); mostra_vetor(vet, TAMANHO);
-            start = clock();
+            printf("Original: "); mostra_vetor(vet, TAMANHO);
+            start = clock(); //calculando tempo
             selectionSort(vet, TAMANHO);
-            finish = clock();
-            printf("Vetor ordenado: "); mostra_vetor(vet, TAMANHO);
+            finish = clock(); ; //fim da contagem
+            printf("Ordenado: "); mostra_vetor(vet, TAMANHO);
             time = (difftime(finish, start)/CLOCKS_PER_SEC);
             printf("Tempo de execução: %.4f s \n\n", time);
             break;
         case 4: 
             printf("\n ###### QUICK SORT ###### \n");
             cria_vetor(vet, TAMANHO);
-            printf("Vetor original: "); mostra_vetor(vet, TAMANHO);
+            printf("Original: "); mostra_vetor(vet, TAMANHO);
             quickSort(vet, 0, TAMANHO-1);
-            printf("Vetor ordenado: "); mostra_vetor(vet, TAMANHO);
+            printf("Ordenado: "); mostra_vetor(vet, TAMANHO);
             printf("\n");
             break;
         case 0:
-            printf(" \n--> Saindo da aplicação...\n");
+            printf(" \nFIM...\n");
             opcao = 0;
             break;
         default:
-            printf("Operação inválida");
+            printf("\nOperação inválida\n\n");
             break;
         }
     }while(opcao);
