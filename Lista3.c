@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 typedef struct box{
         char conteudo;
@@ -57,6 +58,7 @@ void excluindo(Box *inicio, char cont){
 
 int main()
 {
+    setlocale(LC_ALL, "Portuguese");
     printf("###### LISTA ENCADEADA ######\n \n");
     Box *inicio, *temp1, *temp2;
 
