@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <locale.h>
-#include<string.h>
+#include <string.h>
 
 typedef struct { //criando registro
     char Nome[30];
@@ -15,7 +15,7 @@ void AddPessoas(Agenda *a, char *nome, char *endereco, int fone, int *contatos)/
     strcpy(a[*contatos].Nome, nome);
     strcpy(a[*contatos].Endereco, endereco);
     a[*contatos].Fone = fone;
-    a[*contatos].Situacao = 'L';
+    a[*contatos].Situacao = 'L'; //definindo todo contato como livre
     *contatos += 1;
 
 }
@@ -25,7 +25,7 @@ int PesquisaPessoas(Agenda *a, char *nome, int *contatos)
     int i = 0;
     for(i = 0; i < *contatos; i++)
     {
-        if(!strcmp(a[i].Nome, nome))//verificando se nome lido está no vetor
+        if(!strcmp(a[i].Nome, nome))//comparando conteudos e verificando se nome lido está no vetor
             return i;
     }
 
