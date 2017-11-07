@@ -19,10 +19,10 @@ void mostraLista(Box *inicio){ //exibir lista
 
 void inserindoFinal(Box *inicio, char aux){
     Box *novo = inicio;
-    while(novo->proximo != NULL){
+    while(novo->proximo != NULL){ //até encontrar o último 
         novo = novo->proximo;
     }
-    novo->proximo = (Box *)malloc(sizeof(Box));
+    novo->proximo = (Box *)malloc(sizeof(Box)); //alocando memoria
     novo = novo->proximo;
     novo->conteudo = aux;
     novo->proximo = NULL;
@@ -48,12 +48,12 @@ void inserindoEntreDois(Box *inicio, char primeiro, char aux){
 
 void excluindo(Box *inicio, char cont){
     Box *temp1 = inicio;
-    while(temp1->proximo->conteudo != cont){
+    while(temp1->proximo->conteudo != cont){ 
         temp1 = temp1->proximo;
     }
     Box *temp2 = temp1->proximo;
     temp1->proximo = temp2->proximo;
-    free(temp2);
+    free(temp2); //liberando espaco
 }
 
 int main()
@@ -101,14 +101,14 @@ int main()
     printf("Sétimo ");
     mostraLista(inicio);
 
-    // Exclui ultimo 
+    // Exclui ultimo
     temp1 = inicio;
     while(temp1->proximo->proximo != NULL){
         temp1 = temp1->proximo;
     }
     temp2 = temp1->proximo;
     temp1->proximo = temp2->proximo;
-    free(temp2);
+    free(temp2); //liberando espaco
 
     printf("Oitavo ");
     mostraLista(inicio);
