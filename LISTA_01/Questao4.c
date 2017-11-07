@@ -4,7 +4,10 @@
 
 int primo(int num){
 
-    if(num==1){//1 não é primo
+    if(num==1){
+      return 0;
+    }
+    if(num==0){ 
       return 0;
     }
     
@@ -20,43 +23,42 @@ int main(){
     setlocale(LC_ALL, "Portuguese");
     int num, i, total=0;
     printf("NÚMEROS PRIMOS!!\n");
-    do{
-        printf("Digite um número: ");
-        scanf("%d", &num);
+    printf("Digite um número: ");
+    scanf("%d", &num);
 
-        if(!primo(num)){ // !operador lógico para negação
-            printf("O número %d NÃO é primo\n", num);
-        }
+    if(!primo(num)){ // !operador lógico para negação
+        printf("O número %d NÃO é primo\n", num);
+    }
         
        
-        if(primo(num)){
-            printf("O número %d É primo\n", num);
-            printf("Primos sucessores de %d: ", num);
-            for(i=num+1; total<2; i++){ //mostrando os dois proximos primos
-                if(primo(i)){
-                    total++;
-                    printf("%d, ", i);
-                }
+    if(primo(num)){
+        printf("O número %d É primo\n", num);
+        printf("Primos sucessores de %d: ", num);
+        for(i=num+1; total<2; i++){ 
+            if(primo(i)){ //mostrando os dois proximos primos
+                total++; 
+                printf("%d, ", i);
             }
+        }
 
-            total=0;
-            printf("\nPrimos antecessores de %d: ", num); //mostrando os dois primos anteriores
-            for(i = num-1; i > 0; i--){
-            if(primo(i))
-            {
-                printf("%d\n", i);
-                total++;
-            }
-            if(total >= 2){ //dois n tem antecessor
-                break;
-            }
+        total=0;
+        printf("\nPrimos antecessores de %d: ", num); 
+        for(i = num-1; i > 0; i--){
+          if(primo(i)){ //mostrando os dois primos anteriores
+              printf("%d\n", i);
+              total++;
+          }
+          if(total >= 2){ //só mostrar dois antecessores 
+              break;
+          }
+            
+          if(num == 2){
+            printf("Não possui antecessor\n");
+          }
 
   
-            }
+        }
 
     };
-    }while(num%2 == 0);
-    printf("\n");
-    system("pause");
     return 0;
 }
