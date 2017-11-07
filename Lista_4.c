@@ -20,23 +20,23 @@ void mostra_vetor(int *vet, int n){
     }
     printf("]\n");
 }
- 
+
 void bubbleSort (int *vet, int n){
     int i, j, aux, contador=0;
     for(i=1; i<n; i++){
         for(j=0; j<n-i; j++){
-            if(vet[j]>vet[j+1]){
+            if(vet[j]>vet[j +1]){ //verifica se o j é maior que a proxima posicao
                 aux = vet[j];
                 vet[j] = vet[j+1];
                 vet[j+1] = aux;
-                contador++;
+                contador++; //qtd de trocas
             }
         }
     }
     printf("Quantidade de trocas: %d \n", contador);
 }
 
-void insertionSort(int *vet, int n){ 
+void insertionSort(int *vet, int n){
     int i, j, aux;
     for(i=1; i<n; i++){
         aux = vet[i];
@@ -53,7 +53,7 @@ void selectionSort(int *vet, int n){
     int i, j, min, aux, contador=0;
     for(i=0; i<n-1; i++){
         min = i;
-        for(j=i+1; j<n; j++){
+        for(j=i+1; j<n; j++){ //indo pra proxima posicao de i
             if(vet[j] < vet[min]){
                 min = j;
                 contador++;
@@ -74,8 +74,8 @@ void quickSort(int *vet, int inicio, int fim){
    pivo = vet[meio];
 
    do{
-      while (vet[i] < pivo) i = i + 1;
-      while (vet[j] > pivo) j = j - 1;
+      while (vet[i] < pivo) i = i + 1; //valores menores que pivo colocados antes dele
+      while (vet[j] > pivo) j = j - 1; // valores maiores que pivo colocado depois dele
 
       if(i <= j){
          aux = vet[i];
@@ -110,18 +110,18 @@ int main()
         scanf("%d", &menu);
 
         switch(menu){
-        case 1: 
+        case 1:
             printf("\n ###### BUBBLE SORT ###### \n");
             cria_vetor(vet, TAMANHO); //criando vetor com 10 elementos
             printf("Original: "); mostra_vetor(vet, TAMANHO);
-            start = clock(); //calculando tempo 
+            start = clock(); //calculando tempo
             bubbleSort(vet, TAMANHO);
             finish = clock(); //fim da contagem
             printf("Ordenado: "); mostra_vetor(vet, TAMANHO);
             time = (difftime(finish, start)/CLOCKS_PER_SEC);
             printf("Tempo de execução: %.3f s \n\n", time);
             break;
-        case 2: 
+        case 2:
             printf("\n ###### INSERTION SORT ######\n");
             cria_vetor(vet, TAMANHO);
             printf("Original: "); mostra_vetor(vet, TAMANHO);
@@ -129,7 +129,7 @@ int main()
             printf("Ordenado: "); mostra_vetor(vet, TAMANHO);
             printf("\n ");
             break;
-        case 3: 
+        case 3:
             printf("\n ###### SELECTION SORT ###### \n");
             cria_vetor(vet, TAMANHO);
             printf("Original: "); mostra_vetor(vet, TAMANHO);
@@ -140,7 +140,7 @@ int main()
             time = (difftime(finish, start)/CLOCKS_PER_SEC);
             printf("Tempo de execução: %.4f s \n\n", time);
             break;
-        case 4: 
+        case 4:
             printf("\n ###### QUICK SORT ###### \n");
             cria_vetor(vet, TAMANHO);
             printf("Original: "); mostra_vetor(vet, TAMANHO);
